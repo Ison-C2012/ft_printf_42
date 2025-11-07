@@ -1,0 +1,48 @@
+#introduction
+Discover variadic functions in C.
+Well-structured & extensible code.
+
+Once you pass this assignment,
+you will be able to add your ft_printf() to your libft.
+
+#mandatory
+
+table:
+Program name		libftprintf.a
+Turn in files		Makefile, *.h, */*.h, *.c, */*.c
+Makefile			NAME, all, clean, fclean, re
+External functs.	malloc, free, write,
+					va_start, va_arg, va_copy, va_end
+Libft authorized	Yes
+Description			Write a library that contains ft_printf(), a
+					function that will mimic the original printf()
+
+prototype: int	ft_printf(const char *, ...);
+
+requirements:
+do not implement buffer management.
+handle these converstions: c,s,p,d,i,u,x,X,%
+your function will be evaluated against the behavior of the original printf().
+use ar command, not libtool
+libftprintf.a must be at the root dir.
+
+conversions:
+%c: a single char.
+%s: a string (as defined by the common C convention).
+%p: the void * pointer argument in hexadecimal format.
+%d: a decimal number.
+%i: an integer in base 10.
+%u: an unsigned decimal number.
+%x: a number in hexadecimal lowercase format.
+%X: a numebr in hexadecimal uppercase format.
+%%: '%'.
+
+#memo
+
+".. a function that will mimic the original printf()"
+it's "mimic" but "re-implement".
+
+both %d and %i give the same behavior.
+%% is not conversion (maybe no arg for this).
+
+
