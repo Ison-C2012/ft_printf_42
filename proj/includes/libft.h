@@ -6,17 +6,22 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:19:02 by keitakah          #+#    #+#             */
-/*   Updated: 2025/11/07 15:14:59 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/09 19:37:16 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+// -------------------------------------------------------------
+
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stddef.h>
 # include <stdint.h>
+
+// -------------------------------------------------------------
 
 int		ft_atoi(const char *nptr);
 int		ft_isalnum(int c);
@@ -52,5 +57,13 @@ void	ft_putnbr_fd(int n, int fd);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+
+// -------------------------------------------------------------
+
+int		ft_isupper(int c);
+int		ft_islower(int c);
+int		ft_isspace(char c);
+
+// -------------------------------------------------------------
 
 #endif

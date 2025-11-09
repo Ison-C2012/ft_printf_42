@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   putconv_chars.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 13:41:56 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/09 13:43:05 by keitotak         ###   ########.fr       */
+/*   Created: 2025/11/09 19:05:07 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/09 19:47:51 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 #include "libft.h"
 
-int	ft_isupper(int c)
+int	putconv_char(char c)
 {
-	return (c >= 'A' && c <= 'Z');
+	ft_putchar_fd(c, STDOUT);
+	return (1);
+}
+
+int	putconv_str(char *str)
+{
+	ft_putstr_fd(str, STDOUT);
+	return (ft_strlen(str));
 }
