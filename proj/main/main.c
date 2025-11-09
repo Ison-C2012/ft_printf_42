@@ -1,6 +1,6 @@
 
-#include "libft.h"
 #include "ft_printf.h"
+#include "libft.h"
 
 #include <stdio.h>
 
@@ -8,41 +8,75 @@ int	main(void)
 {
 	int	res;
 
-	res = ft_printf("This is keitotak. Hello, you hear me?\n");
-	printf("\n%d\n", res);
+	ft_printf("\n==================ft_printf==================\n");
+	ft_printf("c: ");
+	res = ft_printf("%c", 'a');
+	ft_printf("\t%d\n", res);
 
-	res = ft_printf("Yes yes, hi, I'm %s\n", "Sally");
-	printf("\n%d\n", res);
+	ft_printf("s: ");
+	res = ft_printf("%s", "abc");
+	ft_printf("\t%d\n", res);
 
-	res = ft_printf("%c%c%c\n", 'O', 'h', '!');
-	printf("\n%d\n", res);
+	ft_printf("i: ");
+	res = ft_printf("%i", 0);
+	ft_printf("\t%d\n", res);
 
-	res = ft_printf("We hadn't seen for %d years! How was it going?\n", 9);
-	printf("\n%d\n", res);
+	ft_printf("d: ");
+	res = ft_printf("%d", 1);
+	ft_printf("\t%d\n", res);
 
-	res = ft_printf("Yeah, it's so long time. I'm %u now, can you believe?lol\n", 25);
-	printf("\n%d\n", res);
+	ft_printf("u: ");
+	res = ft_printf("%u", UINT_MAX);
+	ft_printf("\t%d\n", res);
 
-	res = ft_printf("Where do you live?\n");
-	printf("\n%d\n", res);
+	ft_printf("x: ");
+	res = ft_printf("%x", UINT_MAX);
+	ft_printf("\t%d\n", res);
 
-	res = ft_printf("%p\n", "Brooklyn.");
-	printf("\n%d\n", res);
+	ft_printf("X: ");
+	res = ft_printf("%X", UINT_MAX);
+	ft_printf("\t%d\n", res);
 
-	res = ft_printf("Well, it seems so far... How long from NY?\n");
-	printf("\n%d\n", res);
+	ft_printf("p: ");
+	res = ft_printf("%p", &res);
+	ft_printf("\t%d\n", res);
 
-	res = ft_printf("About... %x km maybe\n", 42);
-	printf("\n%d\n", res);
+	printf("\n\n");
 
-	res = ft_printf("Sally, you're a really humourous girl haha.\n");
-	printf("\n%d\n", res);
+	printf("\n==================printf==================\n");
+	printf("c: ");
+	res = printf("%c", 'a');
+	printf("\t%d\n", res);
 
-	res = ft_printf("In ohter way,  %X minutes from NY\n", 60);
-	printf("\n%d\n", res);
+	printf("s: ");
+	res = printf("%s", "abc");
+	printf("\t%d\n", res);
 
-	res = ft_printf("I got it. I'll go someday. Bye.\n");
-	printf("\n%d\n", res);
+	printf("i: ");
+	res = printf("%i", 0);
+	printf("\t%d\n", res);
+
+	printf("d: ");
+	res = printf("%d", 1);
+	printf("\t%d\n", res);
+
+	printf("u: ");
+	res = printf("%u", UINT_MAX);
+	printf("\t%d\n", res);
+
+	printf("x: ");
+	res = printf("%x", UINT_MAX);
+	printf("\t%d\n", res);
+
+	printf("X: ");
+	res = printf("%X", UINT_MAX);
+	printf("\t%d\n", res);
+
+	printf("p: ");
+	res = printf("%p", &res);
+	printf("\t%d\n", res);
+
+	printf("\n\n");
 
 	return 0;
 }

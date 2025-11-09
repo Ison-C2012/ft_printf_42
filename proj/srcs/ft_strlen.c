@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
+/*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/26 17:16:58 by keitotak          #+#    #+#             */
-/*   Updated: 2025/10/28 21:47:04 by keitotak         ###   ########.fr       */
+/*   Created: 2025/10/17 22:32:59 by keitotak          #+#    #+#             */
+/*   Updated: 2025/10/20 14:00:59 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
-int ft_lstsize(t_list *lst)
+size_t	ft_strlen(const char *s)
 {
-	int	size;
+	size_t	len;
 
-	size = 1;
-	while (lst->next != NULL)
-	{
-		size++;
-		lst = lst->next;
-	}
-	return (size);
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }

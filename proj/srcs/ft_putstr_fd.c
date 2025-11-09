@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/26 17:55:27 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/02 21:38:19 by keitotak         ###   ########.fr       */
+/*   Created: 2025/10/19 19:38:38 by keitotak          #+#    #+#             */
+/*   Updated: 2025/10/20 14:16:30 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_putstr_fd(char *s, int fd)
 {
-	t_list	*last;
-
-	last = ft_lstlast(*lst);
-	last->next = new;
+	write(fd, s, ft_strlen(s));
 }

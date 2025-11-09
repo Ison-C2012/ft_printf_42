@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:25:41 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/09 19:47:36 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 00:31:14 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 int	putconv(va_list *ptr_ap, char c)
 {
+	if (c == '%')
+		return (putconv_char('%'));
 	if (c == 'c')
 		return (putconv_char(va_arg(*ptr_ap, int)));
 	if (c == 's')
@@ -29,23 +31,29 @@ int	putconv(va_list *ptr_ap, char c)
 		return (putconv_uint_hex(va_arg(*ptr_ap, unsigned int), lower));
 	if (c == 'X')
 		return (putconv_uint_hex(va_arg(*ptr_ap, unsigned int), upper));
-	if (c == '%')
-		return (putconv_char('%'));
 	return (-1);
 }
 
 int	convert_print(va_list *ptr_ap, char *fmt)
 {
-	int	len;
+	int		len;
+	size_t	i;
 
 	len = 0;
-	while (fmt[len])
+	i = 0;
+	while (fmt[i])
 	{
-		if (fmt[len] == '%' && ft_strchr(CONV, fmt[len + 1]))
-			len += putconv(ptr_ap, fmt[len + 1]);
+		if (fmt[i] == '%' && ft_strchr(CONV, fmt[i + 1]))
+		{
+			len += putconv(ptr_ap, fmt[i + 1]);
+			i += 2;
+		}
 		else
-			ft_putchar_fd(fmt[len], STDOUT);
-		len++;
+		{
+			ft_putchar_fd(fmt[i], STDOUT);
+			len += 1;
+			i += 1;
+		}
 	}
 	return (len);
 }
