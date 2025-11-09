@@ -4,10 +4,7 @@
 int	main(void)
 {
 	int	res;
-/*
-	res = printf("%%%q%t%r%m%h\n");
-	printf("%d\n", res);
-*/
+
 	res = printf("%%s\n");
 	printf("%d\n", res);
 
@@ -16,4 +13,3 @@ int	main(void)
 
 	return 0;
 }
-
