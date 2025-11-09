@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 13:24:05 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/10 01:54:39 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 02:07:31 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	putconv_int(int nbr)
 {
-	ft_putnbr_fd(nbr, STDOUT);
+	putnbr(nbr);
 	return (count_digit(nbr, DEC) + (nbr < 0));
 }
 
