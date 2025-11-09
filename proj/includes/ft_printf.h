@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:18:10 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/10 01:07:41 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 01:59:25 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # define OCT 8
 # define DEC 10
 # define HEX 16
-# define ABS(nb) ((nb > 0) * nb - (nb < 0) * nb)
 
 typedef enum
 {
@@ -37,9 +36,9 @@ int		putconv_str(char *str);
 int		putconv_int(int nbr);
 int		putconv_uint(unsigned int unbr);
 int		putconv_ptr(uintptr_t ptr);
-int		putconv_uint_hex(int unbr, charcase lu);
+int		putconv_uint_hex(unsigned int unbr, charcase lu);
 size_t	count_digit(long long nbr, int base);
-void	putunbr(unsigned int nbr);
-void	putunbr_hex(uintptr_t nbr, charcase lu);
+void	putnbr(long long nbr);
+void	putnbr_hex(unsigned long long nbr, charcase lu);
 
 #endif

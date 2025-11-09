@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 13:24:05 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/10 01:08:39 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 01:54:39 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,24 @@ int	putconv_int(int nbr)
 
 int	putconv_uint(unsigned int unbr)
 {
-	putunbr(unbr);
+	putnbr(unbr);
 	return (count_digit(unbr, DEC));
 }
 
 int	putconv_ptr(uintptr_t ptr)
 {
+	if (ptr == 0)
+	{
+		ft_putstr_fd("(nil)", STDOUT);
+		return (ft_strlen("(nil)"));
+	}
 	ft_putstr_fd("0x", STDOUT);
-	putunbr_hex(ptr, lower);
+	putnbr_hex(ptr, lower);
 	return (count_digit(ptr, HEX) + 2);
 }
 
-int	putconv_uint_hex(int unbr, charcase lu)
+int	putconv_uint_hex(unsigned int unbr, charcase lu)
 {
-	putunbr_hex(unbr, lu);
+	putnbr_hex(unbr, lu);
 	return (count_digit(unbr, HEX));
 }

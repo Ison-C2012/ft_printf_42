@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:25:41 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/10 00:31:14 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 01:58:01 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	putconv(va_list *ptr_ap, char c)
 		return (putconv_uint_hex(va_arg(*ptr_ap, unsigned int), lower));
 	if (c == 'X')
 		return (putconv_uint_hex(va_arg(*ptr_ap, unsigned int), upper));
-	return (-1);
+	return (0);
 }
 
 int	convert_print(va_list *ptr_ap, char *fmt)

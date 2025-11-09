@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 19:05:07 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/09 19:47:51 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 01:45:59 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	putconv_char(char c)
 
 int	putconv_str(char *str)
 {
+	if (str == NULL)
+		str = "(null)";
 	ft_putstr_fd(str, STDOUT);
 	return (ft_strlen(str));
 }

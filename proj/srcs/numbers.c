@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 19:43:03 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/10 01:08:16 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 01:58:56 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,38 @@
 
 size_t	count_digit(long long nbr, int base)
 {
-	size_t		dgt;
-	long long	abs;
+	size_t	dgt;
 
 	if (nbr == 0)
 		return (1);
+	if (nbr < 0)
+		nbr = -nbr;
 	dgt = 0;
-	abs = ABS(nbr);
-	while (abs)
+	while (nbr)
 	{
 		dgt++;
-		abs /= base;
+		nbr /= base;
 	}
 	return (dgt);
 }
 
-void	putunbr(unsigned int nbr)
+void	putnbr(long long nbr)
 {
+	if (nbr < 0)
+	{
+		ft_putchar_fd('-', STDOUT);
+		nbr = -nbr;
+	}
 	if (nbr < DEC)
 	{
 		ft_putchar_fd('0' + nbr, STDOUT);
 		return ;
 	}
-	putunbr(nbr / DEC);
-	putunbr(nbr % DEC);
+	putnbr(nbr / DEC);
+	putnbr(nbr % DEC);
 }
 
-void	putunbr_hex(uintptr_t nbr, charcase lu)
+void	putnbr_hex(unsigned long long nbr, charcase lu)
 {
 	if (nbr < HEX)
 	{
@@ -51,6 +56,6 @@ void	putunbr_hex(uintptr_t nbr, charcase lu)
 			ft_putchar_fd('a' + (nbr - DEC) + ('A' - 'a') * lu, STDOUT);
 		return ;
 	}
-	putunbr_hex(nbr / HEX, lu);
-	putunbr_hex(nbr % HEX, lu);
+	putnbr_hex(nbr / HEX, lu);
+	putnbr_hex(nbr % HEX, lu);
 }

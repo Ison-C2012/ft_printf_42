@@ -1,34 +1,34 @@
-# **************************************************************************** #
-#                                   SETTINGS                                   #
-# **************************************************************************** #
 
 NAME	:=	libftprintf.a
 
 INCDIR	:=	includes
 
-SRCDIRS	:=	srcs libft
+SRCDIR	:=	srcs
 OBJDIR	:=	objs
 
-SRCS	:=	$(foreach dir,$(SRCDIRS),$(wildcard $(dir/*.c)))
-OBJS	:=	$(addprefix $(OBJDIR)/,$(notdir $(SRC:.c=.o)))
+SRCS	:=	ft_printf.c \
+			ft_putchar_fd.c \
+			ft_putnbr_fd.c \
+			ft_putstr_fd.c \
+			ft_strchr.c \
+			ft_strlen.c \
+			numbers.c \
+			putconv_chars.c \
+			putconv_nbrs.c
+OBJS    := $(SRCS:%.c=$(OBJDIR)/%.o)
 
-AR		:= ar rcs
+AR		:= ar
+ARFLAGS	:= rcs
 CC		:= cc
 CFLAGS	:= -Wall -Wextra -Werror
-#MKDIR	:= mkdir
+MKDIR	:= mkdir
 
-# **************************************************************************** #
-#                                    RULES                                     #
-# **************************************************************************** #
+$(NAME): $(OBJS)
+	$(AR) $(ARFLAGS) $@ $?
 
-all: $(NAME)
-
-$(NAME): $(OBJS) 
-	$(AR) $@ $?
-
-$(OBJDIR)/%.o: $(foreach dir,$(SRCDIRS),$(dir)/%.c)
-	@makedir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCDIR)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	$(MKDIR) -p $(dir $@)
+	$(CC) $(CFLAGS) -I $(INCDIR) -c $< -o $@
 
 clean: 
 	rm -rf $(OBJDIR)
