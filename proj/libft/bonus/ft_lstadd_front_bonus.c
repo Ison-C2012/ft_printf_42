@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 21:30:42 by keitotak          #+#    #+#             */
-/*   Updated: 2025/10/19 00:54:52 by keitotak         ###   ########.fr       */
+/*   Created: 2025/10/26 17:13:46 by keitotak          #+#    #+#             */
+/*   Updated: 2025/10/28 21:36:36 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-static int	ft_isupper(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	return (c >= 'A' && c <= 'Z');
-}
-
-int	ft_tolower(int c)
-{
-	if (ft_isupper(c))
-		c += 'a' - 'A';
-	return (c);
+	new->next = *lst;
+	*lst = new;
 }

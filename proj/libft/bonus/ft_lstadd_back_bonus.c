@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 15:18:10 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/09 14:44:23 by keitotak         ###   ########.fr       */
+/*   Created: 2025/10/26 17:55:27 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/02 21:38:19 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft_bonus.h"
 
-# include <stdarg.h>
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*last;
 
-# define TRUE 1
-# define FALSE 0
-# define STDOUT 1
-# define CONV "cspdiuxX%"
-
-# define ABS(nb) ((nb > 0) * nb - (nb < 0) * nb)
-
-int		ft_printf(const char *format, ...);
-size_t	count_digit(long long nb);
-
-#endif
+	last = ft_lstlast(*lst);
+	last->next = new;
+}

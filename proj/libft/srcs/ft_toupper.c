@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 15:18:10 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/09 14:44:23 by keitotak         ###   ########.fr       */
+/*   Created: 2025/10/16 21:30:42 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/09 13:57:07 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdarg.h>
-
-# define TRUE 1
-# define FALSE 0
-# define STDOUT 1
-# define CONV "cspdiuxX%"
-
-# define ABS(nb) ((nb > 0) * nb - (nb < 0) * nb)
-
-int		ft_printf(const char *format, ...);
-size_t	count_digit(long long nb);
-
-#endif
+int	ft_toupper(int c)
+{
+	if (ft_islower(c))
+		c += 'A' - 'a';
+	return (c);
+}

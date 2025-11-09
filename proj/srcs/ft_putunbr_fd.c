@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putunbr_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 15:18:10 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/09 14:44:23 by keitotak         ###   ########.fr       */
+/*   Created: 2025/10/19 19:43:03 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/09 14:37:43 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdarg.h>
-
-# define TRUE 1
-# define FALSE 0
-# define STDOUT 1
-# define CONV "cspdiuxX%"
-
-# define ABS(nb) ((nb > 0) * nb - (nb < 0) * nb)
-
-int		ft_printf(const char *format, ...);
-size_t	count_digit(long long nb);
-
-#endif
+void	ft_putunbr_fd(unsigned int un, int fd)
+{
+	if (un < 10)
+	{
+		ft_putchar_fd('0' + un, fd);
+		return ;
+	}
+	ft_putunbr_fd(un / 10, fd);
+	ft_putunbr_fd(un % 10, fd);
+}

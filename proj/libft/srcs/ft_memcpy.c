@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 15:18:10 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/09 14:44:23 by keitotak         ###   ########.fr       */
+/*   Created: 2025/10/17 19:50:21 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/02 21:25:30 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdarg.h>
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				i;
 
-# define TRUE 1
-# define FALSE 0
-# define STDOUT 1
-# define CONV "cspdiuxX%"
+	if (dest == src || src == NULL)
+		return (dest);
+	d = (unsigned char *)dest;
+	s= (const unsigned char *)src;
+	i = 0;
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dest);
+}
 
-# define ABS(nb) ((nb > 0) * nb - (nb < 0) * nb)
-
-int		ft_printf(const char *format, ...);
-size_t	count_digit(long long nb);
-
-#endif
+/*
+   no matter src_size. n is matter.
+   iteration must be increment.
+*/

@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 23:05:24 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/07 15:12:49 by keitotak         ###   ########.fr       */
+/*   Created: 2025/10/17 19:31:00 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/09 13:58:39 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	l_len;
+	unsigned char	*ptr;
 
-	l_len = ft_strlen(little);
-	if (l_len == 0)
-		return ((char *)big);
-	while (*big && len >= l_len)
+	ptr = (unsigned char *)s;
+	while (n--)
 	{
-		if (ft_strncmp(big, little, l_len) == 0)
-			return ((char *)big);
-		big++;
-		len--;
+		if (*ptr == (unsigned char)c)
+			return (ptr);
+		ptr++;
 	}
 	return (NULL);
 }

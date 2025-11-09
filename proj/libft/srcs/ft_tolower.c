@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 19:50:21 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/07 15:12:23 by keitotak         ###   ########.fr       */
+/*   Created: 2025/10/16 21:30:42 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/09 13:57:16 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_tolower(int c)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
-	size_t				i;
-
-	if (dest == src || src == NULL)
-		return (dest);
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
-	i = 0;
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dest);
+	if (ft_isupper(c))
+		c += 'a' - 'A';
+	return (c);
 }
-
-/*
-   no matter src_size. n is matter.
-   iteration must be increment.
-*/

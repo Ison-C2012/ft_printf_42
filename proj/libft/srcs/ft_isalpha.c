@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 15:18:10 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/09 14:44:23 by keitotak         ###   ########.fr       */
+/*   Created: 2025/10/16 20:25:07 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/09 13:43:15 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <stdarg.h>
-
-# define TRUE 1
-# define FALSE 0
-# define STDOUT 1
-# define CONV "cspdiuxX%"
-
-# define ABS(nb) ((nb > 0) * nb - (nb < 0) * nb)
-
-int		ft_printf(const char *format, ...);
-size_t	count_digit(long long nb);
-
-#endif
+int	ft_isalpha(int c)
+{
+	return (ft_isupper(c) || ft_islower(c));
+}

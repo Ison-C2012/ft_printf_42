@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 22:43:36 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/02 21:29:23 by keitotak         ###   ########.fr       */
+/*   Created: 2025/10/26 18:56:46 by keitotak          #+#    #+#             */
+/*   Updated: 2025/11/02 21:37:31 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	char	*ptr;
+	t_list	*tmp;
 
-	ptr = NULL;
-	while (*s)
+	while (lst != NULL)
 	{
-		if (*s == (char)c)
-			ptr = s;
-		s++;
+		tmp = *lst->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
-	if (*s == (char)c)
-		ptr = s;
-	return (ptr);
+	lst = NULL;
 }

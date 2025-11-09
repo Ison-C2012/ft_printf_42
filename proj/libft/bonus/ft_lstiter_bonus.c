@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 21:30:42 by keitotak          #+#    #+#             */
-/*   Updated: 2025/10/19 00:54:56 by keitotak         ###   ########.fr       */
+/*   Created: 2025/10/26 19:15:51 by keitotak          #+#    #+#             */
+/*   Updated: 2025/10/28 21:51:42 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-static int	ft_islower(int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	return (c >= 'a' && c <= 'z');
-}
-
-int	ft_toupper(int c)
-{
-	if (ft_islower(c))
-		c += 'A' - 'a';
-	return (c);
+	while (lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
