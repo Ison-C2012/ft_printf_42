@@ -1,0 +1,9 @@
+
+#conversion
+d, i:int argument is converted to signed decimal notation.
+u, x, X:unsigned int argument is converted to unsigned (hexa-)decimal notation.
+c:int argument is converted to an unsigned char.
+s:const char * argument
+p:void * pointer argument.
+%:"%%" is converted to '%'
+
