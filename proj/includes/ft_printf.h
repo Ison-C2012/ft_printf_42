@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:18:10 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/10 18:07:35 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 22:00:48 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,5 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
-
 
 #endif
