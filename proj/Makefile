@@ -22,14 +22,14 @@ CC		:= cc
 CFLAGS	:= -Wall -Wextra -Werror
 MKDIR	:= mkdir
 
-all: $(NAME)
-
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $?
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(MKDIR) -p $(dir $@)
 	$(CC) $(CFLAGS) -I $(INCDIR) -c $< -o $@
+
+all: $(NAME)
 
 clean: 
 	rm -rf $(OBJDIR)
@@ -38,9 +38,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-print:
-	@echo "SRCS = $(SRCS)"
-	@echo "OBJS = $(OBJS)"
 
 .PHONY: all clean fclean re
