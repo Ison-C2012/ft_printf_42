@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:25:41 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/10 01:58:01 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:54:01 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,13 @@ int	convert_print(va_list *ptr_ap, char *fmt)
 	i = 0;
 	while (fmt[i])
 	{
-		if (fmt[i] == '%' && ft_strchr(CONV, fmt[i + 1]))
+		if (fmt[i] == '%' && fmt[i + 1] && ft_strchr(CONV, fmt[i + 1]))
 		{
 			len += putconv(ptr_ap, fmt[i + 1]);
 			i += 2;
 		}
+		else if (fmt[i] == '%' && fmt[i + 1] == '\0')
+			return (-1);
 		else
 		{
 			ft_putchar_fd(fmt[i], STDOUT);
@@ -64,6 +66,8 @@ int	ft_printf(const char *format, ...)
 	va_list	ap;
 	int		len;
 
+	if (format == NULL)
+		return (-1);
 	fmt = (char *)format;
 	if (ft_strchr(format, '%') == NULL)
 	{
