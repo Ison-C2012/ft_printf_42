@@ -6,17 +6,18 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:18:10 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/10 14:24:05 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 18:07:35 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft.h"
-
 # include <stdarg.h>
 # include <stdint.h>
+# include <stddef.h>
+# include <limits.h>
+# include <unistd.h>
 
 # define STDOUT 1
 # define CONV "cspdiuxX%"
@@ -41,5 +42,11 @@ size_t	count_digit(long long nbr, int base);
 size_t	count_digit_uintptr(unsigned long long nbr, int base);
 void	putnbr(long long nbr);
 void	putnbr_hex(unsigned long long nbr, t_ccase lu);
+
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+char	*ft_strchr(const char *s, int c);
+size_t	ft_strlen(const char *s);
+
 
 #endif

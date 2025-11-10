@@ -6,11 +6,11 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 22:32:59 by keitotak          #+#    #+#             */
-/*   Updated: 2025/10/20 14:00:59 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 18:00:17 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 size_t	ft_strlen(const char *s)
 {

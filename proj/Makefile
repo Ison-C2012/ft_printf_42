@@ -22,6 +22,8 @@ CC		:= cc
 CFLAGS	:= -Wall -Wextra -Werror
 MKDIR	:= mkdir
 
+all: $(NAME)
+
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $?
 

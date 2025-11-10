@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 int	putconv_int(int nbr)
 {

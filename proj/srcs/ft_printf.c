@@ -6,12 +6,11 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:25:41 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/10 15:54:01 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:56:04 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 int	putconv(va_list *ptr_ap, char c)
 {

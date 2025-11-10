@@ -6,11 +6,11 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 22:43:36 by keitotak          #+#    #+#             */
-/*   Updated: 2025/10/24 01:40:09 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 18:00:31 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 char	*ft_strchr(const char *s, int c)
 {

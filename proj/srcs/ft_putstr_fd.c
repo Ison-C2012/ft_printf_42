@@ -6,11 +6,11 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 19:38:38 by keitotak          #+#    #+#             */
-/*   Updated: 2025/10/20 14:16:30 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/10 18:00:44 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
