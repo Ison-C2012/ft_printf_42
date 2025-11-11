@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 13:24:05 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/11 20:34:58 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:39:11 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	putconv_int(int nbr)
 {
-	int	len;
+	int		len;
 	long	nb;
 
 	putnbr(nbr);
