@@ -6,30 +6,13 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 19:43:03 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/10 14:23:47 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:30:42 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	count_digit(long long nbr, int base)
-{
-	size_t	dgt;
-
-	if (nbr == 0)
-		return (1);
-	if (nbr < 0)
-		nbr = -nbr;
-	dgt = 0;
-	while (nbr)
-	{
-		dgt++;
-		nbr /= base;
-	}
-	return (dgt);
-}
-
-size_t	count_digit_uintptr(unsigned long long nbr, int base)
+size_t	count_digit(unsigned long long nbr, int base)
 {
 	size_t	dgt;
 

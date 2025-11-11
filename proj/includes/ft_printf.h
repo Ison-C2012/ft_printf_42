@@ -6,7 +6,7 @@
 /*   By: keitotak <keitotak@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 15:18:10 by keitotak          #+#    #+#             */
-/*   Updated: 2025/11/10 22:00:48 by keitotak         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:34:32 by keitotak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 # define STDOUT 1
 # define CONV "cspdiuxX%"
-# define OCT 8
+# define OX 2
 # define DEC 10
 # define HEX 16
 
@@ -38,8 +38,8 @@ int		putconv_int(int nbr);
 int		putconv_uint(unsigned int unbr);
 int		putconv_ptr(uintptr_t ptr);
 int		putconv_uint_hex(unsigned int unbr, t_ccase lu);
-size_t	count_digit(long long nbr, int base);
-size_t	count_digit_uintptr(unsigned long long nbr, int base);
+//size_t	count_digit(long long nbr, int base);
+size_t	count_digit(unsigned long long nbr, int base);
 void	putnbr(long long nbr);
 void	putnbr_hex(unsigned long long nbr, t_ccase lu);
 
